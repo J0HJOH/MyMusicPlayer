@@ -32,16 +32,121 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <ImageView
-            android:id="@+id/img"
+        <androidx.cardview.widget.CardView
             android:layout_width="250dp"
             android:layout_height="250dp"
-            android:layout_marginBottom="8dp"
-            android:src="@drawable/sign"
-            android:background="@drawable/sign_bg"/>
+            app:cardCornerRadius="120dp"
+            android:layout_margin="10dp"
+            app:cardElevation="10dp">
 
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/imageinggg"/>
 
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="68dp">
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:progressBackgroundTint="@color/white"
+                android:progressTint="@color/lemon"
+                android:layout_centerInParent="true"
+                android:layout_margin="20dp"
+                android:layout_marginBottom="40dp"/>
+
+            <TextView
+                android:id="@+id/txtSongStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/seekBar"
+                android:layout_centerInParent="true"
+                android:layout_alignParentStart="false"
+                android:layout_marginStart="20dp"
+                android:text="0.00"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/txtSongEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/seekBar"
+                android:layout_centerInParent="true"
+                android:layout_alignParentEnd="false"
+                android:layout_marginEnd="20dp"
+                android:text="5.00"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+        </RelativeLayout>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        >
+       <Button
+           android:layout_width="40dp"
+           android:layout_height="40dp"
+           android:background="@drawable/skip_previous_24"
+           android:id="@+id/previous"
+           android:backgroundTint="@color/lemon"
+           android:elevation="10dp"
+           />
+       <Button
+           android:layout_width="50dp"
+           android:layout_height="50dp"
+           android:background="@drawable/rewind"
+           android:backgroundTint="@color/lemon"
+           android:id="@+id/rewind"
+           android:elevation="10dp"
+           />
+       <Button
+           android:layout_width="70dp"
+           android:layout_height="70dp"
+           android:background="@drawable/pause"
+           android:backgroundTint="@color/lemon"
+           android:id="@+id/pause"
+           android:elevation="10dp"
+           />
+       <Button
+           android:layout_width="50dp"
+           android:layout_height="50dp"
+           android:background="@drawable/fast_forward_24"
+           android:id="@+id/forward"
+           android:backgroundTint="@color/lemon"
+           android:elevation="10dp"
+           />
+       <Button
+           android:layout_width="40dp"
+           android:layout_height="40dp"
+           android:background="@drawable/skip_next_24"
+           android:id="@+id/next"
+           android:backgroundTint="@color/lemon"
+           android:elevation="10dp"
+           />
+    </LinearLayout>
+
+    <com.chibde.visualizer.BarVisualizer
+        android:id="@+id/wave"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:foregroundTint="@color/lemon"
+        android:layout_weight="2"/>
+
 
 </LinearLayout>
